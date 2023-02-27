@@ -1,6 +1,6 @@
 package day2;
 import java.util.Scanner;
-//입출력하기 18
+//출력변환 1
 
 /**
 * 10진수를 입력받아 16진수(hexadecimal)로 출력해보자.

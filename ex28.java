@@ -1,6 +1,7 @@
 package day2;
 import java.util.Scanner;
-//입출력하기 19
+//출력변환 2
+
 
 /**
 * 10진수를 입력받아 16진수(hexadecimal)대문자로 출력해보자.

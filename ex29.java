@@ -1,6 +1,6 @@
 package day2;
 import java.util.Scanner;
-//입출력하기 20
+//값변환 3
 
 /**
 * 16진수를 입력받아 8진수(octal)로 출력해보자.
