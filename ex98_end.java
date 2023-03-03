@@ -35,26 +35,42 @@ public class ex98_end {
 		for(int i=currentX;i<board.length-1;i++) {
 				//먹이 발견 확인 후 경로 진행 변경 후 종료
 				if(board[currentX][currentY]==8) {
+					//멱이발견(값 8)확인 후 수정 후 종료
 					board[currentX][currentY]=9;
 					break;
 				}
+				//더 이상 아래로 갈수 없는지 확인 후 종료
+				if(board[currentX][currentY]==5) {
+					//아래로 이동할 수 없는 곳(값 5)확인 후 수정 후 종료
+					board[currentX][currentY]=1;
+					break;
+				}
+				
 			for(int j=currentY;j<board[i].length-1;j++) {
 				//먹이 발견 시
 				if(board[i][j]==2) {
 					currentX=i; //현재 X좌표 저장(종료 경로 확인하기 위해 저장)
 					currentY=j; //현재 Y좌표 저장(종료 경로 확인하기 위해 저장)
-					board[i][j]=8;
+					board[i][j]=8;//먹이발견후 종료 확인값 8로 설정
 					//System.out.printf("END[board[%d][%d]=%d]\n",i,j,board[i][j]);
-					
 					break;
 				}
-				//갈 수 없는곳  발견시
-				else if(board[i][j+1]==1) {
+				//아래로 갈 수 없는곳  발견시
+				if(board[i][j]==1) {
+					currentX=i; //현재 X좌표 저장(경로 유지하기 위해)
+					board[i][j]=5;//먹이발견후 종료 확인값 5로 설정
+					//System.out.println("meet 2. "+"i: "+i+" j: "+j+" currentX "+currentX+" currentY "+currentY+" board[i][j]"+board[i][j]);
+					break;
+				}
+				
+				//오른쪽 갈 수 없는곳  발견시
+				if(board[i][j+1]==1) {
 					currentY=j; //현재 Y좌표 저장(경로 유지하기 위해)
 					board[i][j]=9;
 					//System.out.println("meet 1. "+"i: "+i+" j: "+j+" currentX "+currentX+" currentY "+currentY);
 					break;
 				}
+				
 				//경로 진행시
 				else {
 					board[i][j]=9;
